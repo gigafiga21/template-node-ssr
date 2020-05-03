@@ -1,0 +1,22 @@
+.Navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    background-color: #156eaa;
+}
+
+.Navbar__title {
+    color: #fff;
+}
+
+.Navbar__links {
+    display: flex;
+    align-items: center;
+}
+
+.Navbar__links > * {
+    padding: 20px 30px;
+    color: #fff;
+}

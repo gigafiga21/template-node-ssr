@@ -2,13 +2,15 @@ import path from 'path';
 import express from 'express';
 
 import htmlMiddleware from './middleware/html';
+import storeMiddleware from './middleware/store';
 import renderMiddleware from './middleware/render';
 
 const publicPath = path.join(__dirname, '/public');
-const app = express();
+const server = express();
 
-app.use(express.static(publicPath));
-app.use(htmlMiddleware());
-app.use(renderMiddleware());
+server.use(express.static(publicPath));
+server.use(htmlMiddleware());
+server.use(storeMiddleware());
+server.use(renderMiddleware());
 
-export default app;
+export default server;

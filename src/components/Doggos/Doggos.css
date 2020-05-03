@@ -1,0 +1,21 @@
+.Doggos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60%;
+}
+
+.Doggos__doggo {
+    max-height: 80%;
+    max-width: 90%;
+}
+
+.Doggos__get {
+    height: 10%;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px;
+    background: #156eaa;
+    color: #fff;
+}
