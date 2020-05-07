@@ -11,7 +11,8 @@ module.exports = {
         const entries = {};
 
         for (let page in pages) {
-            entries[page] = [ devServer, path.resolve(__dirname, pages[page].entry) ]
+            const entry = path.resolve(__dirname, pages[page].entry);
+            entries[page] = dev ? [devServer, entry] : entry;
         }
 
         appConfig.output.filename = 'static/js/[name].js';
