@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 
 const htmlMiddleware = () => (req, res, next) => {
-  const publicPath = path.join(__dirname, '/public');
+  const publicPath = path.join(__dirname, './../src/pages');
 
-  fs.readFile(`${publicPath}/app.html`, 'utf8', (err, html) => {
+  fs.readFile(`${publicPath}/index.html`, 'utf8', (err, html) => {
     if (!err) {
       req.html = html;
       next();

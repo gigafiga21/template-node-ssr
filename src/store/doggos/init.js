@@ -1,5 +1,3 @@
 export default {
-    doggos: {
-        picture: null,
-    }
+    picture: null,
 };

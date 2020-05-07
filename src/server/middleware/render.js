@@ -4,10 +4,13 @@ import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-redux';
 
 import { StaticRouter } from 'react-router';
-import App from '../../components/App';
+
+const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
 const renderMiddleware = () => (req, res) => {
     let html = req.html;
+    const { App, name } = req.page;
+
     const htmlReplacements = {
         APP: ReactDOMServer.renderToString(
             <StaticRouter location={req.url} context={{}}>
@@ -18,7 +21,9 @@ const renderMiddleware = () => (req, res) => {
         ),
         STORE: JSON.stringify(
             req.store.getState()
-        ).replace(/</g, '\\u003c')
+        ).replace(/</g, '\\u003c'),
+        CSS: assets[name].css,
+        JS: assets[name].js
     };
 
     Object.keys(htmlReplacements).forEach(key => {

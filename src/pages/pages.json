@@ -1,0 +1,4 @@
+{
+    "memes": { "entry": "src/pages/memes", "route": "/memes", "App": "AppMemes" },
+    "doggos": { "entry": "src/pages/doggos", "route": "/doggos", "App": "AppDoggos" }
+}

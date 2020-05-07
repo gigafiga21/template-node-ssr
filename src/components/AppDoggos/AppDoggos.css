@@ -12,10 +12,25 @@
 }
 
 .Doggos__get {
+    display: flex;
+    justify-content: center;
     height: 10%;
     border: none;
     border-radius: 5px;
     padding: 0 20px;
     background: #156eaa;
+    line-height: 20px;
     color: #fff;
+}
+
+.Doggos__get:before {
+    content: '';
+    display: inline-flex;
+    top: -2px;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    padding-right: 10px;
+    background-image: url('./../../assets/icons/doge.svg');
+    background-repeat: no-repeat;
 }
