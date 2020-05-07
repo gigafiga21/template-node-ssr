@@ -1,6 +1,8 @@
 import { DOGGOS_GET, DOGGOS_FETCHED } from './types';
 import { takeEvery, put, call } from 'redux-saga/effects'
 
+import fetch from 'functions/fetch';
+
 function* doggosFetch() {
     const data = yield call(() =>
         fetch('https://dog.ceo/api/breeds/image/random')

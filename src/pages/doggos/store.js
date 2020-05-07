@@ -4,10 +4,15 @@ import doggoInit from 'store/doggos/init.js'
 
 import configureStore from 'functions/store.js';
 
-export const storeConfig = { reducers: doggoReducers, init: doggoInit, sagas: [doggoSagas] };
+export const storeConfig = {
+    reducers: doggoReducers,
+    init: doggoInit,
+    saga: doggoSagas
+};
+
 export default configureStore.bind(
     null,
     storeConfig.reducers,
     storeConfig.init,
-    storeConfig.sagas
+    storeConfig.saga
 );

@@ -1,6 +1,6 @@
 'use strict';
 const path = require('path');
-const pages = require('./src/pages/pages.json');
+const pages = require('./src/pages/pages.build.json');
 
 module.exports = {
   modify(config, { target, dev }, webpack) {
