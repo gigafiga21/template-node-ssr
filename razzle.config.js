@@ -12,7 +12,7 @@ module.exports = {
 
         for (let page in pages) {
             const entry = path.resolve(__dirname, pages[page].entry);
-            entries[page] = dev ? [devServer, entry] : entry;
+            entries[page] = dev ? ['react-hot-loader/patch', devServer, entry] : entry;
         }
 
         appConfig.output.filename = 'static/js/[name].js';
@@ -23,6 +23,7 @@ module.exports = {
     appConfig.resolve.alias.functions = path.resolve(__dirname, 'src/functions');
     appConfig.resolve.alias.store = path.resolve(__dirname, 'src/store');
     appConfig.resolve.alias.pages = path.resolve(__dirname, 'src/pages');
+    dev && (appConfig.resolve.alias['react-dom'] = '@hot-loader/react-dom');
 
     return appConfig;
   },

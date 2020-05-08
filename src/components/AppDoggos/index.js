@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { hot } from 'react-hot-loader';
 
 import { connect } from 'react-redux';
 import { DOGGOS_GET } from 'store/doggos/types';
@@ -33,4 +34,4 @@ function mapDispatchToProps(dispatch) {
     return { doggosGet: dispatch.bind(null, { type: DOGGOS_GET }) }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppDoggos);
+export default hot(module)(connect(mapStateToProps, mapDispatchToProps)(AppDoggos));
