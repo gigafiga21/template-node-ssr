@@ -2,11 +2,11 @@ module.exports = {
     memes: {
         route: '/memes',
         storeConfig: require('pages/memes/store.js').storeConfig,
-        App: require('components/AppMemes').default
+        App: require('pages/memes').default
     },
     doggos: {
         route: '/doggos',
-        App: require('components/AppDoggos').default,
+        App: require('pages/doggos').default,
         storeConfig: require('pages/doggos/store.js').storeConfig,
     }
 }

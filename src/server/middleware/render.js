@@ -7,14 +7,16 @@ import withRoot from 'components/Root';
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
 const renderApp = (req) => {
-    const Root = withRoot(req.page.App, { server: true, store: req.store });
-
-    return renderToString(
-        <Root
-            router={{ location: req.url, context: {} }}
-            redux={{ store: req.store }}
-        />
+    const Root = withRoot(
+        req.page.App,
+        { server: true, store: req.store },
+        {
+            router: { location: req.url, context: {} },
+            redux: { store: req.store }
+        }
     );
+
+    return renderToString(<Root/>);
 };
 
 const extractStore = (store) => {

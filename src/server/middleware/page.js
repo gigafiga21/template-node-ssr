@@ -8,8 +8,8 @@ const pageMiddleware = () => (req, res, next) => {
 
         if (req.url && req.url.indexOf(page.route) === 0) {
             req.page = {
-                name: name,
-                ...page
+                ...page,
+                name: name
             };
         }
     }

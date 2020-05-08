@@ -1,19 +1,35 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
-
-import { Provider } from 'react-redux';
 import configureStore from './store.js';
+import { connect } from 'react-redux';
+import canUseDOM from 'functions/canUseDOM';
 
-import App from 'components/AppMemes';
+import { hydrateRoot } from 'components/Root';
+import Navbar from 'components/Navbar';
 import 'pages/index.css';
+import './Memes.css';
 
-ReactDOM.hydrate(
-    <BrowserRouter history={createBrowserHistory()}>
-        <Provider store={configureStore()}>
-            <App />
-        </Provider>
-    </BrowserRouter>,
-    document.getElementById('root')
-);
+function Memes({ pictures = [] }) {
+    return (
+        <>
+            <Navbar />
+            <div className="Memes">
+                {pictures.map(picture => {
+                    return (
+                        <img className="Memes__meme" src={picture.src} />
+                    );
+                })}
+            </div>
+        </>
+    );
+}
+
+function mapStateToProps(store) {
+    return { pictures: store.pictures }
+}
+
+const App = connect(mapStateToProps)(Memes)
+export default App;
+
+if (canUseDOM()) {
+    hydrateRoot(App, { redux: { store: configureStore() } });
+}
