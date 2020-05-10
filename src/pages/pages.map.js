@@ -8,5 +8,9 @@ module.exports = {
         route: { path: '/:lang/doggos' },
         App: require('pages/doggos').default,
         storeConfig: require('pages/doggos/store.js').storeConfig,
+    },
+    routes: {
+        route: { path: '/:lang/routes' },
+        App: require('pages/routes').default
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import configureStore from './store.js';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import canUseDOM from 'functions/canUseDOM';
 
 import { hydrateRoot } from 'components/Root';
@@ -11,6 +12,7 @@ import './Memes.css';
 function Memes({ pictures = [] }) {
     return (
         <>
+            <Helmet title="Memes" />
             <Navbar />
             <div className="Memes">
                 {pictures.map(picture => {

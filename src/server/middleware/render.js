@@ -55,7 +55,7 @@ const renderMiddleware = () => (req, res) => {
             res.send(constructPage(req));
         });
 
-        App.fetchData(store.dispatch, match.props);
+        App.fetchData(store.dispatch, req.props);
         store.dispatch(END);
         return;
     }

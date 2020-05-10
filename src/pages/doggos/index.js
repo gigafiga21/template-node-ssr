@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import configureStore from './store.js';
 import { DOGGOS_GET } from 'store/doggos/types';
+import { Helmet } from 'react-helmet';
 import canUseDOM from 'functions/canUseDOM';
 
 import { hydrateRoot } from 'components/Root';
@@ -18,6 +19,7 @@ class Doggos extends Component {
         const { picture, doggosGet } = this.props;
         return (
             <>
+                <Helmet title="Doggos" />
                 <Navbar />
                 <div className="Doggos">
                     {picture ? <img className="Doggos__doggo" src={picture} /> : null}

@@ -1,4 +1,5 @@
 {
     "memes": { "entry": "src/pages/memes" },
-    "doggos": { "entry": "src/pages/doggos" }
+    "doggos": { "entry": "src/pages/doggos" },
+    "routes": { "entry": "src/pages/routes" }
 }
