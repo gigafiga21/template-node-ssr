@@ -48,7 +48,6 @@ const constructPage = (req) => {
 };
 
 const renderMiddleware = () => (req, res) => {
-    let html = req.html;
     const { store, page: { App } } = req;
 
     if (store && store.rootTask) {
@@ -56,7 +55,7 @@ const renderMiddleware = () => (req, res) => {
             res.send(constructPage(req));
         });
 
-        App.fetchData(store.dispatch);
+        App.fetchData(store.dispatch, match.props);
         store.dispatch(END);
         return;
     }
