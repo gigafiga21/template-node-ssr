@@ -4,6 +4,16 @@ import createSagaMiddleware from 'redux-saga'
 
 import canUseDOM from 'functions/canUseDOM.js';
 
+export function safeSaga(saga) {
+    return function* (args) {
+        try {
+            yield saga(args);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}
+
 export default function configureStore(reducers, init, sagas) {
     let sagasMiddleware, middleware = [];
 

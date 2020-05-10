@@ -51,9 +51,10 @@ const renderMiddleware = () => (req, res) => {
     const { store, page: { App } } = req;
 
     if (store && store.rootTask) {
-        store.rootTask.done.then(() => {
-            res.send(constructPage(req));
-        });
+        store.rootTask.done
+            .then(() => {
+                res.send(constructPage(req));
+            });
 
         App.fetchData(store.dispatch, req.props);
         store.dispatch(END);
