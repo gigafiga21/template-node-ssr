@@ -8,6 +8,7 @@
   "dependencies": {
     "@hot-loader/react-dom": "^16.13.0",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.3",
     "node-fetch": "^2.6.0",
     "razzle": "^3.1.0",
     "react": "^16.13.1",

@@ -9,7 +9,7 @@ export default function Navbar() {
             <div className="Navbar__links">
                 <a href="/ru/memes">Memes</a>
                 <a href="/ru/doggos">Doggos</a>
-                <a href="/ru/routes">Routes</a>
+                <a href="/ru/routes/Routes">Routes</a>
             </div>
         </div>
     );
